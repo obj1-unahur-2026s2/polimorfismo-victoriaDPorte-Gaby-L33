@@ -2,3 +2,44 @@ import atletas.*
 import elementos.*
 import disciplinas.*
 
+describe "atletas, disciplinas y elementos"{
+    test "Victoria se achica para medir 150 cm para parecerse a Pareto"{
+        victoria.cambiarAltura(150)
+        assert.equals(150, victoria.altura())
+    }
+
+    test "Despues de achicarse Victoria empieza a practicar Judo"{
+        victoria.cambiarAltura(150)
+        victoria.cambiarDisciplina(judo)
+        assert.equals(judo, victoria.disciplina())
+    }
+
+    test "Pero para practicar Judo le piden que se consiga el elemento judogi"{
+        victoria.cambiarAltura(150)
+        victoria.cambiarDisciplina(judo)
+        victoria.cambiarElemento(judogi)
+        assert.equals(judogi, victoria.elemento())
+    }
+
+    test "Victoria ahora se quiere parecer a Delpo y empieza a practica Tenis"{
+        victoria.cambiarDisciplina(tenis)
+        assert.equals(tenis, victoria.disciplina())
+    }
+
+    test "Para parecer más crece hasta llegar a los 210 cm, se consigue una requeta y tiene dos entrenadores"{
+        victoria.cambiarDisciplina(tenis)
+        victoria.cambiarAltura(210)
+        victoria.cambiarElemento(raqueta)
+        tenis.cambiarCantidadDeEntrenadores(2)
+        assert.equals(2, tenis.cantidadDeEntrenadores())
+    }
+
+    test "Victoria al principio tiene 5 invitados"{
+        assert.equals(5, victoria.cantidadDeInvitados())
+    }
+
+    test "Pero ahora tiene 10 invitados y el presupuesto del tenis es ahora 230$"{
+        victoria.cambiarCantidadDeInvitados(10)
+        assert.equals(230, tenis.presupuesto())
+    }
+}

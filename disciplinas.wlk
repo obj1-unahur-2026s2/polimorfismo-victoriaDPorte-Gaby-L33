@@ -36,6 +36,13 @@ object judo {
 
 }
 
+/*
+Hockey: tiene un presupuesto de $300 más $5 por cada familiar y 
+amigx que lleve victoria. Inicialmente se sabe que lleva 5 invitados, 
+pero puede cambiar. Esta disciplina requiere 6 entrenadores y no puede cambiar esa cantidad.
+*/
 object hockey {
+    method cantidadDeEntrenadores() = 6
 
+    method presupuesto() = 300 + 5 * victoria.cantidadDeInvitados()
 }

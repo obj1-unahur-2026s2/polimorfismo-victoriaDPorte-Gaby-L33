@@ -18,8 +18,13 @@ object victoria {
     var disciplinaActual = tenis
     var elementoActual = raqueta
     var invitadosQueLleva = 5
+    var edadActual = 23
 
-    method edad() = 23
+    method edad() = edadActual
+
+    method disciplina() = disciplinaActual
+
+    method elemento() = elementoActual
 
     method cantidadDeInvitados() = invitadosQueLleva
 
@@ -39,8 +44,14 @@ object victoria {
         invitadosQueLleva = nuevaCantidad
     }
 
-    method presupuesto() = disciplinaActual.entrenadores() * comiteOlimpico.pagoALosEntrenadores + 
+    method presupuesto() = disciplinaActual.cantidadDeEntrenadores() * comiteOlimpico.pagoALosEntrenadores() + 
     disciplinaActual.presupuesto()
+
+    method cumplirAnios(){
+        edadActual += 1
+    }
+
+    method altura() = altura
 
 }
 
@@ -56,10 +67,12 @@ del Judo, que arranca en 1 pero el Comite Olímpico puede,
 en el momento que corresponda, sumar de a una medalla de judo ganada.
 */
 object comiteOlimpico {
-    var pagoALosEntrenadores = 10
+    var pagoActualALosEntrenadores = 10
+
+    method pagoALosEntrenadores() = pagoActualALosEntrenadores
 
     method cambiarPagoALosEntrenadores(nuevoValor){
-        pagoALosEntrenadores = nuevoValor
+        pagoActualALosEntrenadores = nuevoValor
     }
 
     method sumarUnaMedallaDeJudo(){
